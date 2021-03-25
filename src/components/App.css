@@ -1,0 +1,153 @@
+#col-1 {
+  position: relative;
+  width: 33%;
+  float: left;
+  height: 300px;
+  z-index: 1010101010;
+  background-color: white;
+}
+
+#col-2 {
+  position: relative;
+  width: 34%;
+  float: left;
+  height: 500px;
+  z-index: 1010101010;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color:#283747;
+
+}
+
+#col-2 div	{
+	  padding: 20px;
+}
+
+#col-3 {
+  position: relative;
+  width: 33%;
+  float: left;
+  height: 300px;
+  z-index: 1010101010;
+  background-color: white;
+}
+
+
+.resultWin	{
+	color: green;
+}
+
+.resultLoss	{
+	color: red;
+}
+
+.card	{
+	height:300px;
+	margin:15%;
+
+}
+
+.frontcard	{
+	background-color:#932432;
+	height:300px;
+		vertical-align: middle;
+  	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+  	color: #FFFFFF;
+  	font-size: 16px;
+}
+
+.backcard	{
+	background-color:#DE354C;
+	height:300px;
+		vertical-align: middle;
+  	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+  	color: #FFFFFF;
+  	font-size: 16px;
+}
+
+#registration	{
+	margin: 20%;
+	background-color: #283747;
+	text-align: center;
+	color: #FFFFFF;
+
+}
+
+#registration div 	{
+		padding:5px;
+}
+
+.playerheader	{
+	font-size: 20px;
+	margin: 10px;
+}
+
+
+#container	{
+    background-color: #283747;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#battleground	{
+	display:none;
+}
+
+body {
+  background-color: white;
+}
+
+label	{
+	text-align:right;
+}
+
+/* Style the form - display items horizontally */
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
