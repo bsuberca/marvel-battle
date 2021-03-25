@@ -19,19 +19,37 @@ public class RestManager {
 
 
     public static void main(String[] args) throws Exception {
-
-        //JSONObject json = register("test", "1977-11-18", "ben.subercseaux@gmail.com");
-        //JSONObject json = profile("fb316ce0-8da6-11eb-86c2-5547f63e5e04");
-        //JSONObject json = buyCard("fb316ce0-8da6-11eb-86c2-5547f63e5e04");
-        //JSONObject json = battle("fb316ce0-8da6-11eb-86c2-5547f63e5e04", "skill");
-        JSONArray json = getCards("fb316ce0-8da6-11eb-86c2-5547f63e5e04");
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+          //JSONObject json = ping(httpClient);
+        //JSONObject json = register("testuser3344", "1999-11-18", "test@gmail.com",httpClient);
+        //JSONObject json = profile("fb316ce0-8da6-11eb-86c2-5547f63e5e044",httpClient);
+        //JSONObject json = buyCard("fb316ce0-8da6-11eb-86c2-5547f63e5e043",httpClient);
+        //JSONObject json = nextCard("fb316ce0-8da6-11eb-86c2-5547f63e5e04",httpClient);
+        //JSONObject json = battle("fb316ce0-8da6-11eb-86c2-5547f63e5e044", "skill",httpClient);
+        JSONArray json = getCards("fb316ce0-8da6-11eb-86c2-5547f63e5e04",httpClient);
         System.out.println(json.toString());
+        httpClient.getConnectionManager().shutdown();
 
     }
 
 
-    public static JSONObject register(String username, String birthdate, String email) throws Exception {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static JSONObject ping(DefaultHttpClient httpClient) throws Exception {
+
+
+        HttpGet request = new HttpGet(
+                serverUrl + "/ping");
+        request.addHeader("accept", "application/json");
+
+        JSONObject json = executeRequest(httpClient, request);
+
+
+
+        return json;
+
+    }
+
+    public static JSONObject register(String username, String birthdate, String email, DefaultHttpClient httpClient) throws Exception {
+
 
         HttpPost request = new HttpPost(
                 serverUrl + "/register");
@@ -48,14 +66,12 @@ public class RestManager {
 
         JSONObject json = executeRequest(httpClient, request);
 
-        httpClient.getConnectionManager().shutdown();
 
         return json;
 
     }
 
-    public static JSONObject profile(String playerID) throws Exception {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static JSONObject profile(String playerID, DefaultHttpClient httpClient) throws Exception {
 
         HttpGet request = new HttpGet(
                 serverUrl + "/profile");
@@ -64,14 +80,11 @@ public class RestManager {
 
         JSONObject json = executeRequest(httpClient, request);
 
-        httpClient.getConnectionManager().shutdown();
-
         return json;
 
     }
 
-    public static JSONObject buyCard(String playerID) throws Exception {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static JSONObject buyCard(String playerID, DefaultHttpClient httpClient) throws Exception {
 
         HttpGet request = new HttpGet(
                 serverUrl + "/buy-card");
@@ -80,14 +93,11 @@ public class RestManager {
 
         JSONObject json = executeRequest(httpClient, request);
 
-        httpClient.getConnectionManager().shutdown();
-
         return json;
 
     }
 
-    public static JSONObject nextCard(String playerID) throws Exception {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static JSONObject nextCard(String playerID, DefaultHttpClient httpClient) throws Exception {
 
         HttpGet request = new HttpGet(
                 serverUrl + "/next-card");
@@ -96,14 +106,11 @@ public class RestManager {
 
         JSONObject json = executeRequest(httpClient, request);
 
-        httpClient.getConnectionManager().shutdown();
-
         return json;
 
     }
 
-    public static JSONObject battle(String playerID, String battleField) throws Exception {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static JSONObject battle(String playerID, String battleField, DefaultHttpClient httpClient) throws Exception {
 
         HttpPost request = new HttpPost(
                 serverUrl + "/battle");
@@ -119,14 +126,11 @@ public class RestManager {
 
         JSONObject json = executeRequest(httpClient, request);
 
-        httpClient.getConnectionManager().shutdown();
-
         return json;
 
     }
 
-    public static JSONArray getCards(String playerID) throws Exception {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static JSONArray getCards(String playerID, DefaultHttpClient httpClient) throws Exception {
 
         HttpGet request = new HttpGet(
                 serverUrl + "/cards");
@@ -134,8 +138,6 @@ public class RestManager {
         request.addHeader("playerid", playerID);
 
         JSONArray json = executeRequestArray(httpClient, request);
-
-        httpClient.getConnectionManager().shutdown();
 
         return json;
 
