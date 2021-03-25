@@ -36,6 +36,14 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Intellij
+.idea/
+.settings/
+.iml
+
+# Build
+bin/
+
 # TypeScript v1 declaration files
 typings/
 
