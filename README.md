@@ -13,7 +13,7 @@ The code for this game and its API can be found in the following locations:
 ## Results
 
 1. The documentation I created for the REST API can be found here: https://ben-subercaseaux.gitbook.io/marvel-battle/
-1. The client library I created in Java and can be found here: 
+1. The client library I created in Java and can be found here: https://github.com/bsuberca/marvel-battle/blob/master/src/com/marvel/client/RestManager.java
 
 ## Bonus
 
