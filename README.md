@@ -17,7 +17,7 @@ The code for this game and its API can be found in the following locations:
 
 ## Bonus
 
-Aside from the two challenges above, I also developed and interactive game using React. To play the game, follow the directions below.
+Aside from the two challenges above, I also developed an interactive game using React. To play the game, follow the directions below.
 
 
 Install a recent version of [nodeJS](https://nodejs.org/en/download/) and npm on your computer. Open a terminal and issue the following command to confirm they are properly installed (you don't need the exact same versions).
