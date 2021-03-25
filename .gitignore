@@ -39,7 +39,8 @@ jspm_packages/
 # Intellij
 .idea/
 .settings/
-.iml
+*.iml
+.idea
 
 # Build
 bin/
