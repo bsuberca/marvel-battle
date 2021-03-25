@@ -20,7 +20,7 @@
 		"start": "node server/server.js",
 		"demo": "node client/client.js",
 		"game": "react-scripts start",
-		"dev": "concurrently \"npm run start\" \"npm run game\""
+		"play": "concurrently \"npm run start\" \"npm run game\""
 	},
 	"devDependencies": {
 		"concurrently": "^6.0.0"

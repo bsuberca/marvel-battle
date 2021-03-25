@@ -31,7 +31,7 @@ $ npm -v
 Clone this repository and go to the corresponding directory
 ```sh
 npm install
-npm run game
+npm run play
 ```
 
 Open your browser and go to [http://localhost:3000/](http://localhost:3000). If everything is setup correctly your browser should display and you should be at the registration screen.
